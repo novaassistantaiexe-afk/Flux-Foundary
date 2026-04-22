@@ -1,0 +1,89 @@
+<!-- Navigation Snippet — Include on all pages -->
+
+<!-- Add to <head>: -->
+<link rel="stylesheet" href="/css/navigation.css">
+
+<!-- Navigation HTML: -->
+<nav>
+    <div class="container">
+        <a href="/" class="logo">Flux Foundar<span>y</span></a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item">
+                <a href="/about/" class="nav-link">About</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="/projects/" class="nav-link has-dropdown" onclick="toggleDropdown(event, this)">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="/projects/#supernova">Supernova</a></li>
+                    <li><a href="/projects/#aether">AETHER</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item">
+                <a href="/partners/" class="nav-link">Partners</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="/contact/" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Add before closing </body> tag: -->
+<script>
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+        const navMenu = document.getElementById('navMenu');
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        navMenu.classList.toggle('active');
+        toggle.classList.toggle('active');
+    }
+    
+    // Mobile dropdown toggle
+    function toggleDropdown(event, element) {
+        // Only prevent default on mobile
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            const navItem = element.parentElement;
+            navItem.classList.toggle('active');
+        }
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.querySelector('nav');
+        const navMenu = document.getElementById('navMenu');
+        const toggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (!nav.contains(event.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            toggle.classList.remove('active');
+        }
+    });
+    
+    // Reset on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            const navMenu = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            navMenu.classList.remove('active');
+            toggle.classList.remove('active');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    });
+</script>
+
