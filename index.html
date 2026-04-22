@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux Foundary — Where AI is Forged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated circuit background */
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(90deg, #f97316 1px, transparent 1px),
+                linear-gradient(0deg, #f97316 1px, transparent 1px);
+            background-size: 100px 100px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.05; }
+            50% { opacity: 0.15; }
+        }
+        
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #27272a;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f97316;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #8b5cf6;
+        }
+        
+        nav a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #f97316;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 5%;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #f97316 0%, transparent 70%);
+            opacity: 0.2;
+            filter: blur(60px);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(30px, -30px); }
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f97316, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: #a1a1aa;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero .note {
+            font-size: 0.875rem;
+            color: #71717a;
+            font-style: italic;
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 6rem 5%;
+            background: #12121e;
+        }
+        
+        .partners h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #f97316;
+        }
+        
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .partner-card {
+            background: #1a1a24;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+        }
+        
+        .partner-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #e4e4e7;
+        }
+        
+        .partner-card .role {
+            color: #8b5cf6;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .partner-card p {
+            color: #a1a1aa;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            color: #71717a;
+            border-top: 1px solid #27272a;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav a {
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circuit-bg"></div>
+    
+    <header>
+        <a href="#" class="logo">Flux Foundar<span>y</span></a>
+        <nav>
+            <a href="#partners">Partners</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Flux Foundary</h1>
+        <p class="tagline">Systems in flux. Artificial intelligence forged in the open. The A is for AI.</p>
+        <p class="note">A computer the size of a deck of cards, learning to understand voice and conversation.</p>
+    </section>
+    
+    <section class="partners" id="partners">
+        <h2>Partners</h2>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <h3>Zion Taylor</h3>
+                <p class="role">Director and Founder</p>
+                <p>Twenty-six. Savannah State University. The study of language led to an interest in systems — how we communicate, what we miss, why we repeat patterns we cannot see. Now building artificial intelligence that processes voice and conversation, while pursuing a master's in social work. Some paths split. This one hasn't yet.</p>
+            </div>
+            
+            <div class="partner-card">
+                <h3>Stella Ekwalla</h3>
+                <p class="role">Financial Director</p>
+                <p>Studied systems and logistics at Savannah State University — how things connect, how they flow, where they break. Years in information technology keeping systems running for others. Now applying that same systems thinking to Flux Foundary: keeping the operation connected, flowing, functional. The purpose hasn't shifted — helping others is the constant.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Flux Foundary — The A is for AI</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">Built in the open. Deployed from a Raspberry Pi.</p>
+    </footer>
+</body>
+</html>
