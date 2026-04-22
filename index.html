@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flux Foundary — Where AI is Forged</title>
+    <title>Flux Foundary — Where Artificial Intelligence is Forged</title>
     <style>
         * {
             margin: 0;
@@ -12,41 +12,30 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: #0a0a0f;
             color: #e4e4e7;
-            line-height: 1.6;
-            overflow-x: hidden;
+            line-height: 1.7;
         }
         
-        /* Animated circuit background */
-        .circuit-bg {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            pointer-events: none;
-            opacity: 0.1;
-            background-image: 
-                linear-gradient(90deg, #f97316 1px, transparent 1px),
-                linear-gradient(0deg, #f97316 1px, transparent 1px);
-            background-size: 100px 100px;
-            animation: pulse 4s ease-in-out infinite;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #27272a;
+            z-index: 1000;
+            padding: 1rem 5%;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 0.05; }
-            50% { opacity: 0.15; }
-        }
-        
-        /* Header */
-        header {
-            padding: 2rem 5%;
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #27272a;
         }
         
         .logo {
@@ -60,171 +49,313 @@
             color: #8b5cf6;
         }
         
-        nav a {
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
             color: #a1a1aa;
             text-decoration: none;
-            margin-left: 2rem;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
         
-        nav a:hover {
+        .nav-links a:hover {
             color: #f97316;
         }
         
         /* Hero */
         .hero {
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 4rem 5%;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
             position: relative;
+            overflow: hidden;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 600px;
+            height: 600px;
             background: radial-gradient(circle, #f97316 0%, transparent 70%);
-            opacity: 0.2;
-            filter: blur(60px);
-            animation: float 6s ease-in-out infinite;
+            opacity: 0.1;
+            filter: blur(100px);
+            animation: pulse 8s ease-in-out infinite;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, -30px); }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.2); opacity: 0.15; }
         }
         
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(3rem, 10vw, 6rem);
             font-weight: 800;
             margin-bottom: 1rem;
             background: linear-gradient(135deg, #f97316, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            z-index: 1;
         }
         
         .hero .tagline {
-            font-size: 1.25rem;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
             color: #a1a1aa;
-            max-width: 600px;
+            max-width: 700px;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
         }
         
         .hero .note {
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             color: #71717a;
             font-style: italic;
+            position: relative;
+            z-index: 1;
         }
         
-        /* Partners Section */
-        .partners {
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #f97316, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+        }
+        
+        /* Sections */
+        section {
             padding: 6rem 5%;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Projects Preview */
+        .projects-preview {
             background: #12121e;
         }
         
-        .partners h2 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #f97316;
-        }
-        
-        .partner-grid {
+        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
         }
         
-        .partner-card {
+        .project-card {
             background: #1a1a24;
             padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            transition: border-color 0.3s;
+        }
+        
+        .project-card:hover {
+            border-color: #f97316;
+        }
+        
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #e4e4e7;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-card .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #f97316;
+            color: white;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card p {
+            color: #a1a1aa;
+            line-height: 1.6;
+        }
+        
+        /* Partners Preview */
+        .partners-preview {
+            background: #0a0a0f;
+        }
+        
+        .partner-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .partner-card {
+            text-align: center;
+            padding: 2rem;
+            background: #12121e;
             border-radius: 8px;
             border: 1px solid #27272a;
         }
         
         .partner-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
             color: #e4e4e7;
+            margin-bottom: 0.5rem;
         }
         
         .partner-card .role {
             color: #8b5cf6;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
         
         .partner-card p {
             color: #a1a1aa;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         
         /* Footer */
         footer {
+            background: #12121e;
             padding: 3rem 5%;
             text-align: center;
-            color: #71717a;
             border-top: 1px solid #27272a;
+        }
+        
+        footer p {
+            color: #71717a;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer .links {
+            margin-top: 1rem;
+        }
+        
+        footer .links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+        
+        footer .links a:hover {
+            color: #f97316;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
+            .nav-links {
+                display: none;
             }
             
-            nav a {
-                margin: 0 1rem;
+            .hero {
+                padding-top: 5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="circuit-bg"></div>
-    
-    <header>
-        <a href="#" class="logo">Flux Foundar<span>y</span></a>
-        <nav>
-            <a href="#partners">Partners</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Flux Foundar<span>y</span></a>
+            <div class="nav-links">
+                <a href="/about/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/partners/">Partners</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+    </nav>
     
     <section class="hero">
         <h1>Flux Foundary</h1>
-        <p class="tagline">Systems in flux. Artificial intelligence forged in the open. The A is for AI.</p>
+        <p class="tagline">Systems in flux. Artificial intelligence forged in the open. The A is for artificial intelligence.</p>
         <p class="note">A computer the size of a deck of cards, learning to understand voice and conversation.</p>
+        <a href="/projects/" class="cta-button">See What We Are Building</a>
     </section>
     
-    <section class="partners" id="partners">
-        <h2>Partners</h2>
-        <div class="partner-grid">
+    <section class="projects-preview">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <p>Systems being built, tested, and continuously improved.</p>
+        </div>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project Supernova</h3>
+                <span class="status">Active</span>
+                <p>A computer the size of a deck of cards, running continuously on a desk in Georgia. Processing voice. Learning patterns. Built entirely with open-source tools.</p>
+            </div>
+            <div class="project-card">
+                <h3>AETHER</h3>
+                <span class="status">In Development</span>
+                <p>A system that listens to voice messages and helps people understand their own patterns. Built for privacy first. Running on hardware you control.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="partners-preview">
+        <div class="section-header">
+            <h2>Partners</h2>
+            <p>The humans behind the operation.</p>
+        </div>
+        <div class="partner-cards">
             <div class="partner-card">
                 <h3>Zion Taylor</h3>
                 <p class="role">Director and Founder</p>
-                <p>Twenty-six. Savannah State University. The study of language led to an interest in systems — how we communicate, what we miss, why we repeat patterns we cannot see. Now building artificial intelligence that processes voice and conversation, while pursuing a master's in social work. Some paths split. This one hasn't yet.</p>
+                <p>Twenty-six. Savannah State University. The study of language led to an interest in systems — how we communicate, what we miss, why we repeat patterns we cannot see.</p>
             </div>
-            
             <div class="partner-card">
                 <h3>Stella Ekwalla</h3>
                 <p class="role">Financial Director</p>
-                <p>Studied systems and logistics at Savannah State University — how things connect, how they flow, where they break. Years in information technology keeping systems running for others. Now applying that same systems thinking to Flux Foundary: keeping the operation connected, flowing, functional. The purpose hasn't shifted — helping others is the constant.</p>
+                <p>Studied systems and logistics at Savannah State University. Years in information technology. Now applying that systems thinking to keep the operation connected and functional.</p>
             </div>
         </div>
     </section>
     
     <footer>
-        <p>Flux Foundary — The A is for AI</p>
-        <p style="margin-top: 0.5rem; font-size: 0.875rem;">Built in the open. Deployed from a Raspberry Pi.</p>
+        <p>Flux Foundary — The A is for artificial intelligence</p>
+        <p>Built in the open. Deployed from a Raspberry Pi.</p>
+        <div class="links">
+            <a href="/about/">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/partners/">Partners</a>
+            <a href="/contact/">Contact</a>
+        </div>
     </footer>
 </body>
 </html>

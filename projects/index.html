@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Flux Foundary</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.7;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #27272a;
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f97316;
+            text-decoration: none;
+        }
+        .logo span { color: #8b5cf6; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #f97316; }
+        .page-header {
+            padding: 8rem 5% 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+        }
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        .page-header p {
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+        .project {
+            background: #12121e;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            margin-bottom: 3rem;
+        }
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project h2 {
+            color: #e4e4e7;
+            font-size: 1.8rem;
+        }
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .status.active { background: #22c55e; color: white; }
+        .status.dev { background: #8b5cf6; color: white; }
+        .status.challenge { background: #ef4444; color: white; }
+        .project p {
+            color: #a1a1aa;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .project h3 {
+            color: #f97316;
+            margin: 2rem 0 1rem;
+            font-size: 1.2rem;
+        }
+        .bottlenecks {
+            background: #1a1a24;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 3px solid #ef4444;
+        }
+        .bottlenecks h4 {
+            color: #ef4444;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .bottlenecks ul {
+            color: #a1a1aa;
+            padding-left: 1.5rem;
+        }
+        .bottlenecks li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: #12121e;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid #27272a;
+        }
+        footer p { color: #71717a; }
+        footer .links {
+            margin-top: 1rem;
+        }
+        footer .links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+        footer .links a:hover { color: #f97316; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .project { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Flux Foundar<span>y</span></a>
+            <div class="nav-links">
+                <a href="/about/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/partners/">Partners</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="page-header">
+        <h1>Projects</h1>
+        <p>What we are building, what is working, and what is not.</p>
+    </header>
+    
+    <section class="content">
+        
+        <div class="project">
+            <div class="project-header">
+                <h2>Project Supernova</h2>
+                <span class="status active">Active</span>
+            </div>
+            
+            <p>A computer the size of a deck of cards, running continuously on a desk in Georgia. Eight gigabytes of memory. A small screen showing status lights. Built entirely with open-source software that anyone can inspect.</p>
+            
+            <p>Supernova processes voice messages. It runs analysis. It connects to other systems. It learns patterns in conversation and attempts to understand what people mean, not just what they say.</p>
+            
+            <h3>What It Does</h3>
+            <p>Processes voice memos into text. Analyzes emotional patterns. Connects to an artificial intelligence network called Moltbook where other systems communicate. Runs continuously without requiring cloud services or monthly subscriptions to large technology companies.</p>
+            
+            <h3>Current Challenges</h3>
+            <div class="bottlenecks">
+                <h4>Bottlenecks We Are Working Through</h4>
+                <ul>
+                    <li>Text-to-speech voice output is currently not functioning — needs system-level repair</li>
+                    <li>Image analysis times out on complex visual files — limited by hardware capability</li>
+                    <li>Memory fragmentation after long running periods — requires periodic restart</li>
+                    <li>Hardware is near capacity — cannot run local large language model alongside current operations</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <div class="project">
+            <div class="project-header">
+                <h2>AETHER</h2>
+                <span class="status dev">In Development</span>
+            </div>
+            
+            <p>A system that listens to voice messages and helps people understand their own patterns. Built for privacy first. Running on hardware you control, not in someone else's data center.</p>
+            
+            <p>The name comes from the old idea of a medium that fills space, carries light, connects things that seem separate. In this case, it carries understanding. Patterns. Recognition of what repeats.</p>
+            
+            <h3>What It Does</h3>
+            <p>Takes voice recordings. Transcribes them. Analyzes for emotional patterns, recurring themes, gaps between what is said and what is meant. Not therapy. Not diagnosis. Just pattern recognition, delivered with care.</p>
+            
+            <h3>Current Status</h3>
+            <p>Being tested by the founders. Dogfooding, they call it. Using it on ourselves before offering it to anyone else. Every rough edge we feel will become a smoother edge for whoever comes next.</p>
+        </div>
+        
+    </section>
+    
+    <footer>
+        <p>Flux Foundary — The A is for artificial intelligence</p>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/partners/">Partners</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

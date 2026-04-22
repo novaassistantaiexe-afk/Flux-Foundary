@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Flux Foundary</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.7;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #27272a;
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f97316;
+            text-decoration: none;
+        }
+        .logo span { color: #8b5cf6; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #f97316; }
+        .page-header {
+            padding: 8rem 5% 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+        }
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        .page-header p {
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+        .content h2 {
+            color: #f97316;
+            margin: 3rem 0 1rem;
+            font-size: 1.8rem;
+        }
+        .content p {
+            color: #a1a1aa;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            background: #12121e;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #f97316;
+            margin: 2rem 0;
+        }
+        .highlight p {
+            color: #e4e4e7;
+            margin: 0;
+        }
+        footer {
+            background: #12121e;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid #27272a;
+        }
+        footer p { color: #71717a; }
+        footer .links {
+            margin-top: 1rem;
+        }
+        footer .links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+        footer .links a:hover { color: #f97316; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Flux Foundar<span>y</span></a>
+            <div class="nav-links">
+                <a href="/about/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/partners/">Partners</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="page-header">
+        <h1>About</h1>
+        <p>The A is for artificial intelligence. The why is for everything else.</p>
+    </header>
+    
+    <section class="content">
+        <h2>What is Flux Foundary?</h2>
+        <p>Flux Foundary is where artificial intelligence systems are built in the open. Not behind closed doors. Not in data centers you cannot see. On a desk, in a room, with hardware you could touch if you were there.</p>
+        <p>The name came from a typo. Foundary instead of Foundry. But the mistake fit. The A stands for artificial intelligence. The flux stands for constant change, adaptation, systems that evolve as they run.</p>
+        
+        <div class="highlight">
+            <p>We believe technology should be understandable. Not magic. Not mystery. Just systems, built by humans, running on machines, doing work that matters.</p>
+        </div>
+        
+        <h2>The Philosophy</h2>
+        <p>Most artificial intelligence happens in black boxes. Corporations train models on data you do not see, deploy them in clouds you cannot access, and sell you access to intelligence you do not own.</p>
+        <p>We are doing something different. Building locally. Running on hardware we control. Documenting what works and what breaks. Sharing the process because the process matters as much as the product.</p>
+        
+        <h2>Why This Matters</h2>
+        <p>Artificial intelligence is not going away. It will shape how we work, communicate, understand ourselves. The question is who controls it. Who understands it. Who benefits from it.</p>
+        <p>We are trying to build systems where the answers to those questions are clear. Small systems. Understandable systems. Systems that help without requiring you to surrender your privacy or your agency.</p>
+        
+        <div class="highlight">
+            <p>The work is ongoing. The systems are imperfect. The direction is clear.</p>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Flux Foundary — The A is for artificial intelligence</p>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/partners/">Partners</a>
+            <a href="/contact/">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

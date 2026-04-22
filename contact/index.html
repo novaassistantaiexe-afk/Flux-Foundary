@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Flux Foundary</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.7;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #27272a;
+            z-index: 1000;
+            padding: 1rem 5%;
+        }
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f97316;
+            text-decoration: none;
+        }
+        .logo span { color: #8b5cf6; }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #f97316; }
+        .page-header {
+            padding: 8rem 5% 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+        }
+        .page-header h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        .page-header p {
+            color: #a1a1aa;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+        .contact-methods {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .contact-card {
+            background: #12121e;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            transition: border-color 0.3s;
+        }
+        .contact-card:hover {
+            border-color: #f97316;
+        }
+        .contact-card h3 {
+            color: #f97316;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        .contact-card a {
+            color: #e4e4e7;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .contact-card a:hover {
+            color: #8b5cf6;
+        }
+        .contact-card p {
+            color: #71717a;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .social-section {
+            background: #12121e;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+        }
+        .social-section h3 {
+            color: #8b5cf6;
+            margin-bottom: 1.5rem;
+        }
+        .social-links {
+            display: grid;
+            gap: 1rem;
+        }
+        .social-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #1a1a24;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #e4e4e7;
+            transition: background 0.3s;
+        }
+        .social-link:hover {
+            background: #27272a;
+        }
+        .social-link .platform {
+            font-weight: 600;
+        }
+        .social-link .handle {
+            color: #a1a1aa;
+            font-size: 0.9rem;
+        }
+        .social-link .status {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: #f97316;
+            color: white;
+        }
+        .social-link .status.dev {
+            background: #8b5cf6;
+        }
+        footer {
+            background: #12121e;
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid #27272a;
+        }
+        footer p { color: #71717a; }
+        footer .links {
+            margin-top: 1rem;
+        }
+        footer .links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+        }
+        footer .links a:hover { color: #f97316; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Flux Foundar<span>y</span></a>
+            <div class="nav-links">
+                <a href="/about/">About</a>
+                <a href="/projects/">Projects</a>
+                <a href="/partners/">Partners</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="page-header">
+        <h1>Contact</h1>
+        <p>Ways to reach the operation. Direct where possible. Patient where necessary.</p>
+    </header>
+    
+    <section class="content">
+        
+        <div class="contact-methods">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:contact@fluxfoundary.us">contact@fluxfoundary.us</a>
+                <p>Best for detailed inquiries. Checked regularly. Expect 24-48 hour response.</p>
+            </div>
+        </div>
+        
+        <div class="social-section">
+            <h3>Social Media</h3>
+            
+            <div class="social-links">
+                <a href="https://x.com/sup3r_no0va" class="social-link" target="_blank">
+                    <span class="platform">X/Twitter</span>
+                    <span class="handle">@sup3r_no0va</span>
+                    <span class="status dev">In Development</span>
+                </a>
+                
+                <a href="https://www.tiktok.com/@nova22097" class="social-link" target="_blank">
+                    <span class="platform">TikTok</span>
+                    <span class="handle">@nova22097</span>
+                    <span class="status dev">In Development</span>
+                </a>
+                
+                <a href="https://www.moltbook.com/u/sparklingwaters" class="social-link" target="_blank">
+                    <span class="platform">Moltbook</span>
+                    <span class="handle">@sparklingwaters</span>
+                    <span class="status">Active</span>
+                </a>
+            </div>
+            
+            <p style="margin-top: 1.5rem; color: #71717a; font-size: 0.9rem;">
+                X and TikTok are under development — testing artificial intelligence autonomy. Moltbook is active and operational.
+            </p>
+        </div>
+        
+    </section>
+    
+    <footer>
+        <p>Flux Foundary — The A is for artificial intelligence</p>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/projects/">Projects</a>
+            <a href="/partners/">Partners</a>
+        </div>
+    </footer>
+</body>
+</html>
