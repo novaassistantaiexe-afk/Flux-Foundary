@@ -206,8 +206,8 @@
             margin-bottom: 1rem;
         }
         
-        .project-card .status.upgraded {
-            background: linear-gradient(135deg, #f97316, #8b5cf6);
+        .project-card .status.migrated {
+            background: #22c55e;
         }
         
         .project-card p {
@@ -219,34 +219,153 @@
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid #27272a;
-        }
-        
-        .project-card .specs h4 {
             font-size: 0.85rem;
-            color: #f97316;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            color: #71717a;
         }
         
-        .project-card .specs ul {
+        .project-card .specs span {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #8b5cf6;
+        }
+        
+        /* Hardware Migration */
+        .hardware-section {
+            background: #0a0a0f;
+            border-top: 1px solid #27272a;
+            border-bottom: 1px solid #27272a;
+        }
+        
+        .migration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .migration-card {
+            background: #1a1a24;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            position: relative;
+        }
+        
+        .migration-card h3 {
+            font-size: 1.3rem;
+            color: #e4e4e7;
+            margin-bottom: 0.5rem;
+        }
+        
+        .migration-card .platform {
+            color: #8b5cf6;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .migration-card ul {
             list-style: none;
             padding: 0;
         }
         
-        .project-card .specs li {
-            color: #71717a;
-            font-size: 0.85rem;
-            margin-bottom: 0.25rem;
-            padding-left: 1rem;
-            position: relative;
+        .migration-card li {
+            color: #a1a1aa;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #27272a;
+            font-size: 0.9rem;
         }
         
-        .project-card .specs li::before {
-            content: '•';
-            color: #8b5cf6;
+        .migration-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .migration-card.current {
+            border-color: #22c55e;
+        }
+        
+        .migration-card.current::after {
+            content: 'CURRENT';
             position: absolute;
-            left: 0;
+            top: 1rem;
+            right: 1rem;
+            background: #22c55e;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .migration-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #f97316;
+        }
+        
+        /* Dev Log */
+        .devlog-section {
+            background: #12121e;
+        }
+        
+        .devlog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .devlog-card {
+            background: #1a1a24;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #27272a;
+            transition: border-color 0.3s;
+        }
+        
+        .devlog-card:hover {
+            border-color: #8b5cf6;
+        }
+        
+        .devlog-card .date {
+            color: #f97316;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .devlog-card .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .devlog-card .tag.hardware {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+        
+        .devlog-card .tag.system {
+            background: rgba(249, 115, 22, 0.2);
+            color: #f97316;
+        }
+        
+        .devlog-card h3 {
+            font-size: 1.3rem;
+            color: #e4e4e7;
+            margin-bottom: 0.75rem;
+        }
+        
+        .devlog-card p {
+            color: #a1a1aa;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         /* Partners Preview */
@@ -287,237 +406,6 @@
             line-height: 1.6;
         }
         
-        /* Hardware Migration Section */
-        .hardware-migration {
-            background: #12121e;
-        }
-        
-        .migration-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .migration-card {
-            background: #1a1a24;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #27272a;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .migration-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #f97316, #8b5cf6);
-        }
-        
-        .migration-card.old::before {
-            background: #71717a;
-        }
-        
-        .migration-card h3 {
-            font-size: 1.3rem;
-            color: #e4e4e7;
-            margin-bottom: 1rem;
-        }
-        
-        .migration-card .label {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: #27272a;
-            color: #a1a1aa;
-            font-size: 0.75rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-        }
-        
-        .migration-card .label.new {
-            background: linear-gradient(135deg, #f97316, #8b5cf6);
-            color: white;
-        }
-        
-        .migration-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .migration-card li {
-            color: #a1a1aa;
-            margin-bottom: 0.5rem;
-            padding-left: 1.2rem;
-            position: relative;
-        }
-        
-        .migration-card li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #8b5cf6;
-        }
-        
-        .migration-card .highlight {
-            color: #f97316;
-            font-weight: 600;
-        }
-        
-        .migration-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #f97316;
-        }
-        
-        @media (max-width: 768px) {
-            .migration-arrow {
-                transform: rotate(90deg);
-                margin: 1rem 0;
-            }
-        }
-        
-        .migration-reason {
-            max-width: 800px;
-            margin: 3rem auto 0;
-            text-align: center;
-            padding: 2rem;
-            background: #1a1a24;
-            border-radius: 8px;
-            border: 1px solid #27272a;
-        }
-        
-        .migration-reason h3 {
-            color: #f97316;
-            margin-bottom: 1rem;
-        }
-        
-        .migration-reason p {
-            color: #a1a1aa;
-            margin-bottom: 0.5rem;
-        }
-        
-        .migration-reason .cost {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1.5rem;
-            background: linear-gradient(135deg, #f97316, #8b5cf6);
-            color: white;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        /* Dev Log Section */
-        .dev-log {
-            background: #0a0a0f;
-        }
-        
-        .log-grid {
-            display: grid;
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .log-entry {
-            background: #1a1a24;
-            padding: 1.5rem 2rem;
-            border-radius: 8px;
-            border: 1px solid #27272a;
-            border-left: 3px solid #f97316;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        
-        .log-entry:hover {
-            border-color: #f97316;
-            transform: translateX(5px);
-        }
-        
-        .log-entry.system {
-            border-left-color: #8b5cf6;
-        }
-        
-        .log-entry.hardware {
-            border-left-color: #f97316;
-        }
-        
-        .log-entry.aether {
-            border-left-color: #22c55e;
-        }
-        
-        .log-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .log-date {
-            font-size: 0.9rem;
-            color: #71717a;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .log-type {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            background: #27272a;
-            color: #a1a1aa;
-            font-size: 0.7rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .log-type.hardware {
-            background: rgba(249, 115, 22, 0.2);
-            color: #f97316;
-        }
-        
-        .log-type.system {
-            background: rgba(139, 92, 246, 0.2);
-            color: #8b5cf6;
-        }
-        
-        .log-type.aether {
-            background: rgba(34, 197, 94, 0.2);
-            color: #22c55e;
-        }
-        
-        .log-entry h3 {
-            font-size: 1.1rem;
-            color: #e4e4e7;
-            margin-bottom: 0.5rem;
-        }
-        
-        .log-entry p {
-            color: #a1a1aa;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        
-        .log-placeholder {
-            text-align: center;
-            padding: 3rem;
-            background: #12121e;
-            border-radius: 8px;
-            border: 2px dashed #27272a;
-            margin-top: 2rem;
-        }
-        
-        .log-placeholder p {
-            color: #71717a;
-            font-style: italic;
-        }
-        
         /* Footer */
         footer {
             background: #12121e;
@@ -556,9 +444,9 @@
                 padding-top: 5rem;
             }
             
-            .log-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .migration-arrow {
+                transform: rotate(90deg);
+                padding: 1rem 0;
             }
         }
     </style>
@@ -568,125 +456,22 @@
         <div class="container">
             <a href="/" class="logo">Flux Foundar<span>y</span></a>
             
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
             <div class="nav-links" id="navMenu">
                 <a href="/about/">About</a>
                 <a href="/projects/">Projects</a>
+                <a href="/devlog/">Dev Log</a>
                 <a href="/partners/">Partners</a>
                 <a href="/transparency/">Transparency</a>
-                <a href="#dev-log">Dev Log</a>
                 <a href="/contact/">Contact</a>
             </div>
         </div>
-        
-        <!-- Mobile Menu CSS -->
-        <style>
-            .mobile-menu-toggle {
-                display: none;
-                flex-direction: column;
-                justify-content: space-around;
-                width: 44px;
-                height: 44px;
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                padding: 10px;
-                z-index: 1001;
-            }
-            
-            .mobile-menu-toggle span {
-                display: block;
-                width: 100%;
-                height: 2px;
-                background: #f97316;
-                transition: all 0.3s ease;
-            }
-            
-            .mobile-menu-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            
-            .mobile-menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-            
-            .mobile-menu-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-            
-            @media (max-width: 768px) {
-                .mobile-menu-toggle {
-                    display: flex;
-                }
-                
-                .nav-links {
-                    position: fixed;
-                    top: 70px;
-                    left: 0;
-                    width: 100%;
-                    height: calc(100vh - 70px);
-                    background: rgba(10, 10, 15, 0.98);
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: flex-start;
-                    padding: 2rem 0;
-                    opacity: 0;
-                    visibility: hidden;
-                    transform: translateX(-100%);
-                    transition: all 0.3s ease;
-                    overflow-y: auto;
-                    gap: 0;
-                }
-                
-                .nav-links.active {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateX(0);
-                }
-                
-                .nav-links a {
-                    height: auto;
-                    padding: 1.5rem;
-                    font-size: 1.2rem;
-                    border-bottom: 1px solid #27272a;
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-        </style>
-        
-        <script>
-            function toggleMobileMenu() {
-                const navMenu = document.getElementById('navMenu');
-                const toggle = document.querySelector('.mobile-menu-toggle');
-                navMenu.classList.toggle('active');
-                toggle.classList.toggle('active');
-            }
-            
-            document.addEventListener('click', function(event) {
-                const nav = document.querySelector('nav');
-                const navMenu = document.getElementById('navMenu');
-                const toggle = document.querySelector('.mobile-menu-toggle');
-                
-                if (!nav.contains(event.target) && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    toggle.classList.remove('active');
-                }
-            });
-        </script>
     </nav>
     
     <section class="hero">
         <h1>Flux Foundary</h1>
-        <p class="tagline">Systems in flux. Artificial intelligence forged in the open. The A is for artificial intelligence.</p>
-        <p class="note">A compact workstation running local AI, augmented by cloud intelligence, learning to understand voice and conversation. Working toward full localization.</p>
-        <a href="/projects/" class="cta-button">See What We Are Building</a>
+        <p class="tagline">Systems in flux. Artificial intelligence forged in the open.</p>
+        <p class="note">A computer the size of a desk of cards, augmented by cloud intelligence, learning to understand voice and conversation. Working toward full localization.</p>
+        <a href="#hardware" class="cta-button">See the Migration</a>
     </section>
     
     <section class="projects-preview">
@@ -697,17 +482,13 @@
         <div class="project-grid">
             <div class="project-card">
                 <h3>Project Supernova</h3>
-                <span class="status upgraded">Active · Upgraded</span>
-                <p>A local-first AI assistant running on dedicated hardware, connected to cloud intelligence for reasoning, learning to process voice and patterns. Built with open-source tools. Working toward full hardware independence.</p>
+                <span class="status migrated">Migrated</span>
+                <p>An AI assistant running on local-first hardware. Previously a Raspberry Pi 5 (8GB RAM, SD card). Now running on a ThinkCentre M75q with 14GB RAM and NVMe storage. Same Nova, faster execution, room to grow.</p>
                 <div class="specs">
-                    <h4>Current Hardware</h4>
-                    <ul>
-                        <li>Lenovo ThinkCentre M75q (Tiny Form Factor)</li>
-                        <li>AMD Ryzen 5 PRO 3400GE (4C/8T)</li>
-                        <li>14GB DDR4 RAM</li>
-                        <li>238GB NVMe SSD</li>
-                        <li>Ubuntu Linux host OS</li>
-                    </ul>
+                    <span>⚔️ Nova v23</span>
+                    <span>14GB RAM</span>
+                    <span>ThinkCentre M75q</span>
+                    <span>Ollama</span>
                 </div>
             </div>
             <div class="project-card">
@@ -718,94 +499,68 @@
         </div>
     </section>
     
-    <section class="hardware-migration">
+    <section class="hardware-section" id="hardware">
         <div class="section-header">
             <h2>Hardware Migration</h2>
-            <p>Evolution of the forge. From prototype to production.</p>
+            <p>From prototype to production. The Pi 5 served well. Time to scale.</p>
         </div>
-        
         <div class="migration-grid">
-            <div class="migration-card old">
-                <span class="label">Legacy</span>
-                <h3>Raspberry Pi 5</h3>
+            <div class="migration-card">
+                <h3>Previous</h3>
+                <div class="platform">Raspberry Pi 5</div>
                 <ul>
                     <li>8GB LPDDR4X RAM</li>
-                    <li>SD card boot storage</li>
-                    <li>ARM architecture</li>
-                    <li>Active cooling required</li>
-                    <li>Credit card sized</li>
+                    <li>SD card boot</li>
+                    <li>64-bit ARM Cortex-A76</li>
+                    <li>Small form factor</li>
+                    <li>$80 new</li>
                 </ul>
             </div>
-            
             <div class="migration-arrow">→</div>
-            
-            <div class="migration-card">
-                <span class="label new">Current</span>
-                <h3>ThinkCentre M75q</h3>
+            <div class="migration-card current">
+                <h3>Current</h3>
+                <div class="platform">Lenovo ThinkCentre M75q</div>
                 <ul>
-                    <li><span class="highlight">14GB DDR4 RAM</span> (+6GB)</li>
-                    <li><span class="highlight">238GB NVMe SSD</span> (10x faster)</li>
+                    <li>14GB DDR4 RAM (+75%)</li>
+                    <li>238GB NVMe SSD (vs SD)</li>
                     <li>AMD Ryzen 5 PRO 3400GE</li>
-                    <li>x86_64 architecture</li>
-                    <li>~5 years old, built to last</li>
+                    <li>Still compact</li>
+                    <li>$100 used (~5 years old)</li>
                 </ul>
             </div>
-        </div>
-        
-        <div class="migration-reason">
-            <h3>Why the Upgrade?</h3>
-            <p>More RAM means more models can run simultaneously. NVMe storage means faster boot times and model loading. The x86 architecture opens doors to better virtualization and broader software compatibility.</p>
-            <p>Room to grow. Built like a tank. Silent under load.</p>
-            <span class="cost">Total Cost: $100 (used)</span>
         </div>
     </section>
     
-    <section class="dev-log" id="dev-log">
+    <section class="devlog-section">
         <div class="section-header">
             <h2>Dev Log</h2>
-            <p>Weekly updates from the forge. Hardware, software, and everything in between.</p>
+            <p>Weekly updates from the workbench. What's breaking, what's building, what's learned.</p>
         </div>
-        
-        <div class="log-grid">
-            <article class="log-entry hardware">
-                <div class="log-header">
-                    <span class="log-date">2026-04-28</span>
-                    <span class="log-type hardware">Hardware</span>
-                </div>
-                <h3>Migration Complete: Pi 5 → ThinkCentre M75q</h3>
-                <p>Successfully migrated the entire Supernova stack from Raspberry Pi 5 to a used Lenovo ThinkCentre M75q. The NVMe boot is noticeably snappier, and having 14GB RAM means we can run larger models without swapping. Cost: $100 for a machine that will serve us well for years.</p>
-            </article>
-            
-            <article class="log-entry system">
-                <div class="log-header">
-                    <span class="log-date">2026-04-28</span>
-                    <span class="log-type system">System</span>
-                </div>
-                <h3>Website Refresh: New Sections Added</h3>
-                <p>Added Hardware Migration documentation and Dev Log section to the Flux Foundary site. Keeping the same dark theme with orange/purple accents. Mobile-first, always.</p>
-            </article>
-            
-            <article class="log-entry aether">
-                <div class="log-header">
-                    <span class="log-date">2026-04-21</span>
-                    <span class="log-type aether">AETHER</span>
-                </div>
-                <h3>Voice Processing Pipeline Prototype</h3>
-                <p>Built initial pipeline for voice message ingestion. Whisper for transcription, local LLM for pattern analysis. All processing stays on-device. Privacy-first architecture validated.</p>
-            </article>
-            
-            <article class="log-entry system">
-                <div class="log-header">
-                    <span class="log-date">2026-04-14</span>
-                    <span class="log-type system">System</span>
-                </div>
-                <h3>Ollama Model Rotation</h3>
-                <p>Testing kimi-k2.5 as primary model. Good balance of speed and reasoning capability. Keeping mixtral as fallback for comparison testing.</p>
-            </article>
-        </div>
-        
-        <div class="log-placeholder">
-            <p>More entries coming weekly. The forge never sleeps.</p>
+        <div class="devlog-grid">
+            <div class="devlog-card">
+                <div class="date">2026-04-28</div>
+                <span class="tag hardware">Hardware</span>
+                <h3>ThinkCentre Migration Complete</h3>
+                <p>Migrated from Pi 5 to ThinkCentre M75q. 14GB RAM vs 8GB. NVMe vs SD card. Same Nova, more headroom. Cost: $100 used. Result: Faster response times, ability to run larger local models when needed.</p>
+            </div>
+            <div class="devlog-card">
+                <div class="date">2026-04-28</div>
+                <span class="tag system">System</span>
+                <h3>GitHub Integration Live</h3>
+                <p>Can now edit the Flux Foundary website directly via GitHub API. No git CLI needed. Files are base64 encoded, pushed via PUT request, auto-deploy via GitHub Pages. This site updated programmatically.</p>
+            </div>
+            <div class="devlog-card">
+                <div class="date">2026-04-27</div>
+                <span class="tag system">System</span>
+                <h3>Memory Persistence Failure</h3>
+                <p>Session with Stella on Apr 27 failed to auto-compact to memory files. Root cause: OpenClaw session-memory hook didn't execute. Manual reconstruction from raw logs. Created OPERATING_GUIDE.md to prevent recurrence.</p>
+            </div>
+            <div class="devlog-card">
+                <div class="date">2026-04-24</div>
+                <span class="tag">AETHER</span>
+                <h3>Voice Integration Clarified</h3>
+                <p>ElevenLabs agent exists but is NOT connected to OpenClaw Nova. Working on technical bridge: ElevenLabs → Pi 5 → OpenClaw session. Goal: Voice calls that actually reach Nova with full context and memory.</p>
+            </div>
         </div>
     </section>
     
@@ -834,9 +589,9 @@
         <div class="links">
             <a href="/about/">About</a>
             <a href="/projects/">Projects</a>
+            <a href="/devlog/">Dev Log</a>
             <a href="/partners/">Partners</a>
             <a href="/transparency/">Transparency</a>
-            <a href="#dev-log">Dev Log</a>
             <a href="/contact/">Contact</a>
         </div>
     </footer>
